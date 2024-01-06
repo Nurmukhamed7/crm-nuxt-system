@@ -9,6 +9,8 @@
 				class="mx-auto"
 			></NuxtImg>
 		</NuxtLink>
+
+		<UiButton>Button</UiButton>
 	</aside>
 </template>
 
