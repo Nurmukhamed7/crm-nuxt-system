@@ -9,7 +9,12 @@
 			></NuxtImg>
 		</NuxtLink>
 
-		<UiButton>Button</UiButton>
+		<button
+			class="absolute text-primary top-2 right-3 transition-colors hover:text-purple-400"
+		>
+			<Icon name="line-md:logout" size="20"></Icon>
+		</button>
+		<LayoutMenu></LayoutMenu>
 	</aside>
 </template>
 
