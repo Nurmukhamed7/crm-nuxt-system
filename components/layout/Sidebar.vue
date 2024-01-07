@@ -4,11 +4,10 @@
 			<NuxtImg
 				src="/logo.svg"
 				alt="logo"
-				width="100px"
+				width="120px"
 				class="mx-auto"
 			></NuxtImg>
 		</NuxtLink>
-
 		<button
 			class="absolute text-primary top-2 right-3 transition-colors hover:text-purple-400"
 		>
