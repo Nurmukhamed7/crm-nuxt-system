@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { account } from '~/lib/appwrite'
-import { useIsLoadingStore } from '~/store/auth.store'
+import { useIsLoadingStore, useAuthStore } from '~/store/auth.store'
+import { v4 as uuid } from 'uuid'
 
 useHead({
 	title: 'Login | CRM System',
@@ -36,7 +37,8 @@ const login = async () => {
 }
 
 const register = async () => {
-	await account.create(nameRef.value, emailRef.value, passwordRef.value)
+	await account.create(uuid(), emailRef.value, passwordRef.value, nameRef.value)
+	await login()
 }
 </script>
 
@@ -65,8 +67,8 @@ const register = async () => {
 					v-model="nameRef"
 				/>
 				<div class="flex justify-center items-center gap-5">
-					<UiButton type="button">Login</UiButton>
-					<UiButton type="button">Register</UiButton>
+					<UiButton type="button" @click="login">Login</UiButton>
+					<UiButton type="button" @click="register">Register</UiButton>
 				</div>
 			</form>
 		</div>
