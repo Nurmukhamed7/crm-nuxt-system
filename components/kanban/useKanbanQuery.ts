@@ -13,7 +13,25 @@ export function useKanbanQuery() {
 			const newBoard = [...KANBAN_DATA]
 			const deals = data.documents as unknown as IDeal[]
 			console.log(newBoard)
-			console.log(deals)
+
+			for (const deal of deals) {
+				console.log(deal)
+				const column = newBoard.find(col => col.id === deal.status)
+				console.log(column)
+
+				if (column) {
+					column.items.push({
+						$createdAt: deal.$createdAt,
+						id: deal.$id,
+						name: deal.name,
+						price: deal.price,
+						companyName: deal.customer.name,
+						status: deal.status,
+					})
+				}
+			}
+
+			return newBoard
 		},
 	})
 }
