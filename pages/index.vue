@@ -7,6 +7,7 @@ import { useMutation } from '@tanstack/vue-query'
 import { EnumStatus } from '~/types/deals.types'
 import { DB } from '~/lib/appwrite'
 import { COLLECTION_DEALS, DB_ID } from '~/app.constants'
+import { generateColumnStyle } from '@/components/kanban/generate-gradient'
 
 useHead({
 	title: 'Home | CRM System',
@@ -62,7 +63,10 @@ function handleDrop(targetColumn: IColumn) {
 					@drop="() => handleDrop(column)"
 					class="min-h-screen"
 				>
-					<div class="rounded bg-slate-700 py-1 px-5 mb-2">
+					<div
+						class="rounded bg-slate-700 py-1 px-5 mb-2 text-center"
+						:style="generateColumnStyle(index, data?.length)"
+					>
 						{{ column.name }}
 					</div>
 					<div>
