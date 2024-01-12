@@ -8,6 +8,7 @@ import { EnumStatus } from '~/types/deals.types'
 import { DB } from '~/lib/appwrite'
 import { COLLECTION_DEALS, DB_ID } from '~/app.constants'
 import { generateColumnStyle } from '@/components/kanban/generate-gradient'
+import { useDealSlideStore } from '~/store/deal-slide.store'
 
 useHead({
 	title: 'Home | CRM System',
@@ -48,6 +49,8 @@ function handleDrop(targetColumn: IColumn) {
 		mutate({ docId: dragCardRef.value.id, status: targetColumn.id })
 	}
 }
+
+const dealStore = useDealSlideStore()
 </script>
 
 <template>
@@ -78,7 +81,7 @@ function handleDrop(targetColumn: IColumn) {
 							draggable="true"
 							@dragstart="() => handleDragStart(card, column)"
 						>
-							<UiCardHeader role="button">
+							<UiCardHeader role="button" @click="dealStore.set(card)">
 								<UiCardTitle>
 									{{ card.name }}
 								</UiCardTitle>
@@ -94,6 +97,7 @@ function handleDrop(targetColumn: IColumn) {
 					</div>
 				</div>
 			</div>
+			<KanbanSlideover />
 		</div>
 	</div>
 </template>
