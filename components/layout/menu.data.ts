@@ -27,8 +27,8 @@ export const MENU_DATA: IMenuItem[] = [
 	},
 	{
 		icon: 'mingcute:group-line',
-		name: 'Customer',
-		url: '/customer',
+		name: 'Customers',
+		url: '/customers',
 	},
 	{
 		icon: 'fluent:person-feedback-48-regular',
