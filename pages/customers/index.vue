@@ -35,7 +35,7 @@ const { data: customers, isLoading } = useQuery({
 					:key="customer.$id"
 				>
 					<UiTableCell>
-						<NuxtLink href="`/customers/edit/${customer.$id}`">
+						<NuxtLink :href="`/customers/edit/${customer.$id}`">
 							<NuxtImg
 								:src="customer.avatar_url"
 								:alt="customer.name"
