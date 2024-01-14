@@ -101,6 +101,7 @@ const onSubmit = handleSubmit(values => {
 				<label>
 					<div class="text-sm mb-2">Логотип</div>
 					<UiInput
+						class="file:text-white"
 						type="file"
 						:onchange="(e:InputFileEvent) => e?.target?.files?.length && uploadImage(e.target.files[0])"
 						:disabled="isUploadImagePending"
