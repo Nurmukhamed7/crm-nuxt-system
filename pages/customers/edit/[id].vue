@@ -118,6 +118,6 @@ const onSubmit = handleSubmit(values => {
 
 <style scoped>
 .input {
-	@apply border-[#161c26] mb-6 placeholder:text-[#748092] focus:border-border transition-colors;
+	@apply border-[#161c25] mb-6 placeholder:text-[#748092] focus:border-border transition-colors;
 }
 </style>
